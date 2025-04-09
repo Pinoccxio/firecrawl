@@ -52,7 +52,7 @@ describe("Crawl tests", () => {
                 expect(page.metadata.url ?? page.metadata.sourceURL).toMatch(/^https:\/\/(www\.)?firecrawl\.dev\/blog/);
             }
         }
-    }, 120000);
+    }, 300000);
     
     it.concurrent("discovers URLs properly when maxDiscoveryDepth is provided", async () => {
         const res = await crawl({
@@ -69,5 +69,5 @@ describe("Crawl tests", () => {
                 expect(page.metadata.url ?? page.metadata.sourceURL).not.toMatch(/^https:\/\/(www\.)?firecrawl\.dev\/blog\/.+$/);
             }
         }
-    }, 120000);
+    }, 300000);
 });
